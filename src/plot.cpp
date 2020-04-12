@@ -94,8 +94,8 @@ void Plot::render_function(const char* name) {
 		double x_coord = x_min + ((x_max - x_min) / max_n) * i;
 
 		// Calculate coords of current point
-		x = (int)(textrect.w / 2 - x_multiplier * x_coord - linethickness / 2);
-		y = (int)(textrect.h / 2 + y_multiplier * lua.run_function(name, x_coord) - linethickness / 2);
+		x = (int)(textrect.w / 2 - x_multiplier * x_coord);
+		y = (int)(textrect.h / 2 + y_multiplier * lua.run_function(name, x_coord));
 
 		// Don't draw off-screen points
 		if (x > 0 && x < textrect.w && y > 0 && y < textrect.h) {
